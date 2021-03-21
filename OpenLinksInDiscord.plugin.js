@@ -69,7 +69,7 @@ class OpenLinksInDiscord {
 		});
 
 		this.event = e => {
-            if(e.target.localName == "a" && e.target.href && e.target.href.startsWith("http") && !e.target.parentElement.className.includes("channel") && !e.target.href.includes("/channels/")) {
+            if( (e.target.localName == "a") && (e.target.href) && (e.target.href.startsWith("http")) && (!e.target.parentElement.className.includes("channel")) && (!e.target.href.includes("/channels/")) ) {
 				if((!this.settings.ctrlKey || e.ctrlKey) && (!this.settings.shiftKey || e.shiftKey) && (!this.settings.altKey || e.altKey)) {
 					if(this.settings.reverse) {
 						this.onClickLink(e);
